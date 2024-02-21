@@ -2,3 +2,38 @@ id: revenue_chart
 type: Card
 layout: 
   span: 16
+blocks:
+  - id: revenue_chart
+    type: EChart
+    properties:
+      option:
+        tooltip:
+          trigger: axis
+        title: 
+          left: center
+          text: Revenue (Weekly)
+        xAxis: 
+          type: category
+          data:
+            - Day 1
+            - Day 2
+            - Day 3
+            - Day 4
+            - Day 5
+            - Day 6
+            - Day 7
+        yAxis:
+          type: value
+        series:
+          - type: line
+            name: Income (Rands)
+            itemStyle:
+              color:  "#4649ff"
+            data:
+              - 150
+              - 230
+              - 224
+              - 218
+              - 135
+              - 147
+              - 260
