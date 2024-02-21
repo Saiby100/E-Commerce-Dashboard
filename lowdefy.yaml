@@ -1,0 +1,16 @@
+
+lowdefy: 4.0.1
+name: Lowdefy starter
+
+menus:
+  - id: default
+    links:
+      - id: dashboard
+        type: MenuLink
+        pageId: dashboard
+        properties:
+          icon: AiOutlineHome
+          title: Dashboard
+
+pages:
+  - _ref: pages/dashboard/dashboard.yaml

@@ -1,0 +1,48 @@
+id: dashboard
+type: PageHeaderMenu
+properties:
+  title: Dashboard
+  content:
+    style:
+      background: "#7075FF"
+
+layout:
+  contentGutter: 16
+
+blocks:
+  - id: section_income
+    type: Title 
+    properties:
+      content: Revenue Data
+      level: 3
+
+  - _ref: pages/dashboard/components/charts/revenue_chart.yaml
+
+  - id: shopping_data
+    type: Box
+    layout: 
+      span: 8
+      contentGutter: 10
+    blocks:
+      - _ref: pages/dashboard/components/cards/orders_placed.yaml
+      - _ref: pages/dashboard/components/cards/cancellations.yaml
+      - _ref: pages/dashboard/components/cards/deliveries.yaml
+  
+  - id: section_users
+    type: Title
+    properties:
+      content: User Data
+      level: 3
+    
+  - _ref: pages/dashboard/components/charts/active_user_chart.yaml
+
+  - id: user_activity_data
+    type: Box
+    layout: 
+      span: 8
+      contentGutter: 10
+
+    blocks:
+      - _ref: pages/dashboard/components/cards/account_creations.yaml
+      - _ref: pages/dashboard/components/cards/reviews.yaml
+      - _ref: pages/dashboard/components/cards/category.yaml
