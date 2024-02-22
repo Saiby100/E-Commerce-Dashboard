@@ -1,8 +1,13 @@
 id: revenue_chart
-type: Card
+type: Box
 layout: 
-  span: 16
+  span: 12
+  contentGutter: 16
+properties:
+  style:
+    padding: "20px"
 blocks:
+
   - id: revenue_chart
     type: EChart
     properties:
