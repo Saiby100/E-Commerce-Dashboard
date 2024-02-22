@@ -2,6 +2,29 @@
 lowdefy: 4.0.1
 name: Lowdefy starter
 
+connections:
+  - id: orders 
+    type: MongoDBCollection
+    properties:
+      databaseUri:
+        _secret: DATABASE_URL
+      databaseName: e_commerce_lowdefy
+      collection: Orders
+  - id: users
+    type: MongoDBCollection
+    properties:
+      databaseUri:
+        _secret: DATABASE_URL
+      databaseName: e_commerce_lowdefy
+      collection: Users
+  - id: ordered_products
+    type: MongoDBCollection
+    properties:
+      databaseUri:
+        _secret: DATABASE_URL
+      databaseName: e_commerce_lowdefy
+      collection: Users
+
 menus:
   - id: default
     links:
