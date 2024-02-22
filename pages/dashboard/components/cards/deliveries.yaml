@@ -1,4 +1,7 @@
 id: orders_placed
 type: Card
 layout:
-  span: 24
+  span: 8
+properties:
+  hoverable: true
+  title: "Deliveries"
