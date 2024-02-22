@@ -1,0 +1,14 @@
+id: revenue_services
+type: Box
+layout:
+  span: 8
+  contentGutter: 12
+blocks:
+  - id: services_card
+    type: Card
+    layout:
+      span: 24
+    properties:
+      hoverable: true
+      title: "Services"
+  - _ref: pages/dashboard/components/progress/progress_services.yaml

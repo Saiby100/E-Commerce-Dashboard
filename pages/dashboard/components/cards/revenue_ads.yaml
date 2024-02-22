@@ -1,0 +1,14 @@
+id: revenue_ads
+type: Box
+layout:
+  span: 8
+  contentGutter: 12
+blocks:
+  - id: ad_card
+    type: Card
+    layout:
+      span: 24
+    properties:
+      hoverable: true
+      title: "Ads"
+  - _ref: pages/dashboard/components/progress/progress_ads.yaml

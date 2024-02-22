@@ -1,0 +1,14 @@
+id: revenue_sales
+type: Box
+layout:
+  span: 8
+  contentGutter: 12
+blocks:
+  - id: sales_card
+    type: Card
+    layout:
+      span: 24
+    properties:
+      hoverable: true
+      title: "Sales"
+  - _ref: pages/dashboard/components/progress/progress_sales.yaml
