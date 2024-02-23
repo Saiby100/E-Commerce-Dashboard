@@ -20,9 +20,8 @@ areas:
     direction: row-reverse
     blocks:
       - id: services_num
-        type: Title
+        type: Statistic
         properties:
-          content: "182" #TODO: Fetch from db
-          level: 4
+          value: 182 #TODO: Fetch from db
         layout:
           grow: 0

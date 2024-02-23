@@ -20,9 +20,8 @@ areas:
     direction: row-reverse
     blocks:
       - id: delivery_num
-        type: Title
+        type: Statistic
         properties:
-          content: "157" #TODO: Fetch from db
-          level: 4
+          value: 157 #TODO: Fetch from db
         layout:
           grow: 0
