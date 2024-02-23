@@ -1,7 +1,7 @@
 id: orders_pending
 type: Card
 layout:
-  span: 8
+  span: 6
 properties:
   hoverable: true
   title: "Orders pending"
