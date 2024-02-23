@@ -6,6 +6,7 @@ properties:
   hoverable: true
   title: "Deliveries"
   size: small
+  bordered: false
 areas: 
   extra:
     blocks:
@@ -15,3 +16,13 @@ areas:
           name: FaTruck
           size: 20
           color: "#3F8DF2"
+  content:
+    direction: row-reverse
+    blocks:
+      - id: delivery_num
+        type: Title
+        properties:
+          content: "157" #TODO: Fetch from db
+          level: 4
+        layout:
+          grow: 0

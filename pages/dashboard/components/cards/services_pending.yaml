@@ -6,6 +6,7 @@ properties:
   hoverable: true
   title: "Services pending"
   size: small
+  bordered: false
 areas: 
   extra:
     blocks:
@@ -15,3 +16,13 @@ areas:
           name: MdMiscellaneousServices
           size: 20
           color: "#3F8DF2"
+  content:
+    direction: row-reverse
+    blocks:
+      - id: services_num
+        type: Title
+        properties:
+          content: "182" #TODO: Fetch from db
+          level: 4
+        layout:
+          grow: 0
