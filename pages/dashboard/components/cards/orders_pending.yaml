@@ -5,8 +5,13 @@ layout:
 properties:
   hoverable: true
   title: "Orders pending"
-# blocks:
-#   - id: order_icon
-#     type: Icon
-#     properties:
-#       name: AiFillDollarCircle
+  size: small
+areas: 
+  extra:
+    blocks:
+      - id: order_icon
+        type: Icon
+        properties:
+          name: AiFillDollarCircle
+          size: 20
+          color: "#3F8DF2"
