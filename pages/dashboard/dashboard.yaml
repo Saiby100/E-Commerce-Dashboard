@@ -2,9 +2,6 @@ id: dashboard
 type: PageHeaderMenu
 properties:
   title: Dashboard
-  content:
-    style:
-      background: "#110C29"
 
 layout:
   contentGutter: 10
@@ -15,7 +12,6 @@ blocks:
     properties:
       content: Revenue Data
       level: 3
-      color: "#ffffff"
 
   - id: date_range_container
     type: Box
@@ -48,13 +44,33 @@ blocks:
       - _ref: pages/dashboard/components/cards/services_pending.yaml
       - _ref: pages/dashboard/components/cards/cancellations.yaml
       - _ref: pages/dashboard/components/cards/deliveries.yaml
-  
+
+  - id: section_divider
+    type: Divider
+
   - id: section_users
     type: Title
     properties:
       content: User Data
       level: 3
-      color: "#ffffff"
+
+  - id: date_range_container
+    type: Box
+    layout:
+      span: 12
+      align: center
+      offset: 6
+    blocks:
+      - id: revenue_date_range
+        type: DateRangeSelector
+        properties:
+          disabledDates:
+            dates: []
+            ranges: []
+          placeholder:
+            - Start Date
+            - End Date
+          title: "User Activity Date Range"
     
   - _ref: pages/dashboard/components/charts/active_user_chart.yaml
 
