@@ -1,0 +1,7 @@
+id: services_pending
+type: Card
+layout:
+  span: 6
+properties:
+  hoverable: true
+  title: "Services pending"
