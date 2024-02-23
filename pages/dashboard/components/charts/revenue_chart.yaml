@@ -2,7 +2,6 @@ id: revenue_chart
 type: Box
 layout: 
   span: 12
-  contentGutter: 16
 properties:
   style:
     padding: "20px"
@@ -16,10 +15,10 @@ blocks:
           trigger: axis
         title: 
           left: center
-          text: Revenue (Weekly)
+          text: Revenue
         xAxis: 
           type: category
-          data:
+          data: #TODO: make dynamic
             - Day 1
             - Day 2
             - Day 3
@@ -34,7 +33,9 @@ blocks:
             name: Income (Rands)
             itemStyle:
               color:  "#4649ff"
-            data:
+            areaStyle:
+              color: "#4649ff"
+            data: #TODO: Fetch from db
               - 150
               - 230
               - 224
