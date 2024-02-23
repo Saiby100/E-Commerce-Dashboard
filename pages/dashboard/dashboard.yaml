@@ -7,7 +7,7 @@ properties:
       background: "#110C29"
 
 layout:
-  contentGutter: 16
+  contentGutter: 10
 
 blocks:
   - id: section_income
@@ -17,17 +17,23 @@ blocks:
       level: 3
       color: "#ffffff"
 
-  - id: revenue_date_range
-    type: DateRangeSelector
-    properties:
-      bordered: false
-      disabledDates:
-        dates: []
-        ranges: []
-      placeholder:
-        - Start Date
-        - End Date
-      title: "Revenue Date Range"
+  - id: date_range_container
+    type: Box
+    layout:
+      span: 12
+      align: center
+      offset: 6
+    blocks:
+      - id: revenue_date_range
+        type: DateRangeSelector
+        properties:
+          disabledDates:
+            dates: []
+            ranges: []
+          placeholder:
+            - Start Date
+            - End Date
+          title: "Revenue Date Range"
   
   - id: revenue_data_container
     type: Box
