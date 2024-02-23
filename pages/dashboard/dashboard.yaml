@@ -36,29 +36,12 @@ blocks:
       contentGutter: 16
     blocks:
       - _ref: pages/dashboard/components/charts/revenue_chart.yaml
-
-      - id: revenue_split
-        type: Box
-        layout: 
-          span: 12
-          contentGutter: 12
-          align: center
-        blocks:
-          - _ref: pages/dashboard/components/cards/revenue_ads.yaml
-          - _ref: pages/dashboard/components/cards/revenue_sales.yaml
-          - _ref: pages/dashboard/components/cards/revenue_services.yaml
-
-      - id: shopping_data
-        type: Box
-        layout: 
-          span: 24
-          contentGutter: 12
-          align: center
-        blocks:
-          - _ref: pages/dashboard/components/cards/orders_pending.yaml
-          - _ref: pages/dashboard/components/cards/cancellations.yaml
-          - _ref: pages/dashboard/components/cards/deliveries.yaml
-
+      - _ref: pages/dashboard/components/charts/revenue_pie.yaml
+      
+      - _ref: pages/dashboard/components/cards/orders_pending.yaml
+      - _ref: pages/dashboard/components/cards/services_pending.yaml
+      - _ref: pages/dashboard/components/cards/cancellations.yaml
+      - _ref: pages/dashboard/components/cards/deliveries.yaml
   
   - id: section_users
     type: Title
@@ -76,5 +59,3 @@ blocks:
       contentGutter: 10
     blocks:
       - _ref: pages/dashboard/components/cards/account_creations.yaml
-      - _ref: pages/dashboard/components/cards/reviews.yaml
-      - _ref: pages/dashboard/components/cards/category.yaml
