@@ -1,9 +1,13 @@
 id: active_user_chart_container
 type: Card
 layout: 
-  span: 16
+  span: 12
+properties:
+  style:
+    paddingTop: 20px
+    backgroundColor: '#ffffff'
 blocks:
-  - id: user_chart
+  - id: user_activity_chart
     type: EChart
     properties:
       option:
@@ -29,6 +33,8 @@ blocks:
             name: Activity (Minutes)
             itemStyle:
               color:  "#ff4683"
+            areaStyle:
+              color: "#ff4683"
             data:
               - 150
               - 230

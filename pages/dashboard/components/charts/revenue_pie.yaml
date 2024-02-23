@@ -4,7 +4,8 @@ layout:
   span: 12
 properties:
   style:
-    padding: "20px"
+    paddingTop: 20px
+    backgroundColor: '#ffffff'
 blocks:
   - id: revenue_pie
     type: EChart
