@@ -1,0 +1,26 @@
+id: fetch_deliveries
+type: MongoDBAggregation
+connectionId: orders
+payload:
+  start_date:
+    _state: start_date_revenue
+  end_date:
+    _state: end_date_revenue
+properties:
+  pipeline:
+    - $match: 
+        date_ordered:
+          $gte: 
+            _date: 
+              _payload: start_date_revenue
+          $lte: 
+            _date: 
+              _payload: end_date_revenue
+        date_completed: 
+          $gte: 
+            _date: 
+              _payload: start_date_revenue
+          $lte: 
+            _date: 
+              _payload: end_date_revenue
+        order_type: "Sale"
