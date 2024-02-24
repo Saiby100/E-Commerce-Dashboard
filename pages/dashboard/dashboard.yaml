@@ -61,7 +61,7 @@ blocks:
       align: center
       offset: 6
     blocks:
-      - id: revenue_date_range
+      - id: users_date_range
         type: DateRangeSelector
         properties:
           disabledDates:
