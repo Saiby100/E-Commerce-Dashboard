@@ -23,7 +23,14 @@ connections:
       databaseUri:
         _secret: DATABASE_URL
       databaseName: e_commerce_lowdefy
-      collection: Users
+      collection: OrderedProducts
+  - id: user_activity
+    type: MongoDBCollection
+    properties:
+      databaseUri:
+        _secret: DATABASE_URL
+      databaseName: e_commerce_lowdefy
+      collection: UserActivity
 
 menus:
   - id: default
