@@ -9,7 +9,7 @@ connections:
       databaseUri:
         _secret: DATABASE_URL
       databaseName: e_commerce_lowdefy
-      collection: Orders
+      collection: Order
   - id: users
     type: MongoDBCollection
     properties:
