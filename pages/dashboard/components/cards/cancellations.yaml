@@ -22,6 +22,9 @@ areas:
       - id: cancelled_num
         type: Statistic
         properties:
-          value: 89
+          value: 
+            _state: 
+              key: cancellations
+              default: 89
         layout:
           grow: 0

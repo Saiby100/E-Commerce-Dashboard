@@ -1,10 +1,10 @@
-id: orders_pending
+id: orders_completed
 type: Card
 layout:
   span: 6
 properties:
   hoverable: true
-  title: "Orders pending"
+  title: "Orders Completed"
   size: small
   bordered: false
 areas: 
@@ -22,6 +22,9 @@ areas:
       - id: orders_num
         type: Statistic
         properties:
-          value: 782 #TODO: Fetch from db
+          value: 
+            _state: 
+              key: orders
+              default: 782
         layout:
           grow: 0

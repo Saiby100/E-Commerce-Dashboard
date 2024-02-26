@@ -1,10 +1,10 @@
-id: services_pending
+id: services_completed
 type: Card
 layout:
   span: 6
 properties:
   hoverable: true
-  title: "Services pending"
+  title: "Services Completed"
   size: small
   bordered: false
 areas: 
@@ -22,6 +22,9 @@ areas:
       - id: services_num
         type: Statistic
         properties:
-          value: 182 #TODO: Fetch from db
+          value: 
+            _state: 
+              key: services
+              default: 179
         layout:
           grow: 0
