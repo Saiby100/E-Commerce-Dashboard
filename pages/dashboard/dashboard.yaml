@@ -48,7 +48,6 @@ events:
 
 requests:
   - _ref: pages/dashboard/components/cards/requests/fetch_cancellations.yaml
-  - _ref: pages/dashboard/components/cards/requests/fetch_deliveries.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_completed.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_services_completed.yaml
 
