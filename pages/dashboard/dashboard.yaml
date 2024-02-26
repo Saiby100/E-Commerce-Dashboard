@@ -6,78 +6,150 @@ properties:
 layout:
   contentGutter: 10
 
-blocks:
-  - id: section_income
-    type: Title 
-    properties:
-      content: Revenue Data
-      level: 3
+events:
+  onMount:
+    - id: init
+      type: SetState
+      params:
+        saved_title:
+          _date: now
+        title_visible: false
 
-  - id: date_range_container
-    type: Box
-    layout:
-      span: 12
-      align: center
-      offset: 6
+areas:
+  content:
+    justify: center
     blocks:
-      - id: revenue_date_range
-        type: DateRangeSelector
+      - id: section_income
+        type: Title 
         properties:
-          disabledDates:
-            dates: []
-            ranges: []
-          placeholder:
-            - Start Date
-            - End Date
-          title: "Revenue Date Range"
-  
-  - id: revenue_data_container
-    type: Box
-    layout:
-      span: 24
-      contentGutter: 16
-    blocks:
-      - _ref: pages/dashboard/components/charts/revenue_chart.yaml
-      - _ref: pages/dashboard/components/charts/revenue_pie.yaml
+          content: Revenue Data
+          level: 3
+      - id: date_range_container
+        type: Box
+        layout:
+          span: 16
+          contentGutter: 10
+        blocks:
+          - id: revenue_date_range
+            type: DateRangeSelector
+            layout:
+              span: 20
+            properties:
+              placeholder:
+                - Start Date
+                - End Date
+              title: "Revenue Date Range"
+              disabledDates:
+                max: 
+                  _date: now
+              events:
+                onChange:
+                  - id: set_saved_title
+                    type: SetState
+                    params:
+                      saved_title: "Changed with date range selector"
+          - id: refresh_btn
+            type: Button
+            layout:
+              span: 4
+              align: bottom
+            properties:
+              title: Refresh
+              style:
+                background: "#ffffff"
+                borderColor: "#ffffff"
+                color: "#000000"
+            events:
+              onClick:
+                - id: set_saved_title
+                  type: SetState
+                  params:
+                    saved_title:
+                      _state: 
+                        key: revenue_date_range.0
+                        default: "Changed with button"
+
+                    title_visible: true
+
+            # events:
+            #   properties:
+            #     onChange:
+            #       - id: set_revenue_dates
+            #         type: SetState
+            #         params:
+            #           start_date_revenue: date.$.0
+            #           end_date_revenue: date.$.1
       
-      - _ref: pages/dashboard/components/cards/orders_pending.yaml
-      - _ref: pages/dashboard/components/cards/services_pending.yaml
-      - _ref: pages/dashboard/components/cards/cancellations.yaml
-      - _ref: pages/dashboard/components/cards/deliveries.yaml
+      - id: revenue_data_container
+        type: Box
+        layout:
+          span: 24
+          contentGutter: 16
+        blocks:
+          - _ref: pages/dashboard/components/charts/revenue_chart.yaml
+          - _ref: pages/dashboard/components/charts/revenue_pie.yaml
+          
+          - _ref: pages/dashboard/components/cards/orders_pending.yaml
+          - _ref: pages/dashboard/components/cards/services_pending.yaml
+          - _ref: pages/dashboard/components/cards/cancellations.yaml
+          - _ref: pages/dashboard/components/cards/deliveries.yaml
 
-  - id: section_divider
-    type: Divider
+      - id: section_divider
+        type: Divider
 
-  - id: section_users
-    type: Title
-    properties:
-      content: User Data
-      level: 3
-
-  - id: date_range_container
-    type: Box
-    layout:
-      span: 12
-      align: center
-      offset: 6
-    blocks:
-      - id: users_date_range
-        type: DateRangeSelector
+      - id: test_title
+        type: Title
+        visible: 
+          _state: title_visible
         properties:
-          disabledDates:
-            dates: []
-            ranges: []
-          placeholder:
-            - Start Date
-            - End Date
-          title: "User Activity Date Range"
-    
-  - _ref: pages/dashboard/components/charts/active_user_chart.yaml
+          content: 
+            _state: 
+              key: saved_title
+              default: Not Saved Title
+          level: 3
 
-  - id: user_activity_data
-    type: Box
-    layout: 
-      span: 8
-      contentGutter: 10
-    blocks:
-      - _ref: pages/dashboard/components/cards/account_creations.yaml
+      # - id: section_users
+      #   type: Title
+      #   properties:
+      #     content: User Data
+      #     level: 3
+
+      # - id: date_range_container
+      #   type: Box
+      #   layout:
+      #     span: 12
+      #     align: center
+      #     offset: 6
+      #   blocks:
+      #     - id: users_date_range
+      #       type: DateRangeSelector
+      #       properties:
+      #         placeholder:
+      #           - Start Date
+      #           - End Date
+      #         title: "User Activity Date Range"
+      #         # title:
+      #         disabledDates:
+      #           max: 
+      #             _state: 
+      #               key: start_date_revenue
+      #               default: 
+      #                 _date: now
+      #       # events:
+      #       #   properties:
+      #       #     onChange:
+      #       #       - id: set_user_dates
+      #       #         type: SetState
+      #       #         params:
+      #       #           start_date_users: #TODO use input date
+      #       #           end_date_users: #TODO use input date
+        
+      # - _ref: pages/dashboard/components/charts/active_user_chart.yaml
+
+      # - id: user_activity_data
+      #   type: Box
+      #   layout: 
+      #     span: 8
+      #     contentGutter: 10
+      #   blocks:
+      #     - _ref: pages/dashboard/components/cards/account_creations.yaml
