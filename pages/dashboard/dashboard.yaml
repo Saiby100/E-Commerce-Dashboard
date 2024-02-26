@@ -6,14 +6,10 @@ properties:
 layout:
   contentGutter: 10
 
-events:
-  onMount:
-    - id: init
-      type: SetState
-      params:
-        saved_title:
-          _date: now
-        title_visible: false
+# events:
+#   onMount:
+#     - id: init
+#       type: SetState
 
 areas:
   content:
@@ -69,7 +65,14 @@ areas:
                         key: revenue_date_range.0
                         default: "Changed with button"
 
-                    title_visible: true
+                    title_visible: 
+                      _not: 
+                        _state: title_visible
+                    orders: 100
+                    services: 101
+                    cancellations: 102
+                    deliveries: 103
+
 
             # events:
             #   properties:
@@ -89,8 +92,8 @@ areas:
           - _ref: pages/dashboard/components/charts/revenue_chart.yaml
           - _ref: pages/dashboard/components/charts/revenue_pie.yaml
           
-          - _ref: pages/dashboard/components/cards/orders_pending.yaml
-          - _ref: pages/dashboard/components/cards/services_pending.yaml
+          - _ref: pages/dashboard/components/cards/orders_completed.yaml
+          - _ref: pages/dashboard/components/cards/services_completed.yaml
           - _ref: pages/dashboard/components/cards/cancellations.yaml
           - _ref: pages/dashboard/components/cards/deliveries.yaml
 
