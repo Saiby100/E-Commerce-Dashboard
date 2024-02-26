@@ -24,7 +24,7 @@ areas:
         properties:
           value: 
             _state: 
-              key: orders
-              default: 782
+              key: result_orders_completed
+              default: -1
         layout:
           grow: 0

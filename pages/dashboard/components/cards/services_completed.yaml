@@ -24,7 +24,7 @@ areas:
         properties:
           value: 
             _state: 
-              key: services
+              key: result_services_completed
               default: 179
         layout:
           grow: 0
