@@ -6,7 +6,7 @@ import pymongo
 
 load_dotenv()
 
-client = pymongo.MongoClient(os.environ.get("DATABASE_URL"))
+client = pymongo.MongoClient(os.environ.get("LOWDEFY_SECRET_DATABASE_URL"))
 db = client["e_commerce_lowdefy"]
 
 user_collection = db["User"]
@@ -53,7 +53,7 @@ def add_order(
 
     if (user_id):
         order_price = random.uniform(150, 2000)
-        order_collection.insert_one({
+        order = {
             "date_ordered": datetime.utcnow(),
             "order_cancelled": order_cancelled,
             "date_completed": date_completed,
@@ -61,7 +61,8 @@ def add_order(
             "order_type": order_type,
             "order_price": order_price,
             "user_id": user_id
-        })
+        }
+        order_collection.insert_one(order)
         print(f"Order added for user {username}")
     else:
         print(f"User with username {username} not found.")
