@@ -1,21 +1,25 @@
-id: fetch_services_pending
+id: fetch_services_completed
 type: MongoDBAggregation
 connectionId: orders
 payload:
   start_date:
-    _state: start_date_revenue
+    _state: 
+      key: revenue_date_range.0
+      default: 
+        _state: default_start_date
   end_date:
-    _state: end_date_revenue
+    _state: 
+      key: revenue_date_range.1
+      default: 
+        _state: default_end_date
+  order_type: "service"
 properties:
   pipeline:
     - $match: 
-        date_ordered:
+        order_type:
+          _payload: order_type
+        date_completed:
           $gte: 
-            _date: 
-              _payload: start_date_revenue
+              _payload: start_date
           $lte: 
-            _date: 
-              _payload: end_date_revenue
-        date_completed: null
-        order_type: "Service"
-        order_cancelled: false
+              _payload: end_date
