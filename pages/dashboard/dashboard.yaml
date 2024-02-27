@@ -1,7 +1,7 @@
 id: dashboard
 type: PageHeaderMenu
 properties:
-  title: Dashboard
+  title: Revenue
 
 layout:
   contentGutter: 10
@@ -30,17 +30,12 @@ requests:
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_completed.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_services_completed.yaml
   - _ref: pages/dashboard/components/charts/requests/fetch_revenue.yaml
+  - _ref: pages/dashboard/components/charts/requests/fetch_revenue_split.yaml
 
 areas:
   content:
     justify: center
     blocks:
-      - id: section_income
-        type: Title 
-        properties:
-          content: Revenue Data
-          level: 3
-      
       - _ref: pages/dashboard/components/revenue_range_selector.yaml
       
       - id: revenue_data_container
@@ -56,64 +51,3 @@ areas:
           - _ref: pages/dashboard/components/cards/services_completed.yaml
           - _ref: pages/dashboard/components/cards/orders_cancelled.yaml
           - _ref: pages/dashboard/components/cards/services_cancelled.yaml
-
-      - id: section_divider
-        type: Divider
-
-      - id: test_title
-        type: Title
-        visible: 
-          _state: title_visible
-        properties:
-          content: 
-            _state: 
-              key: saved_title
-              default: 
-                _date: 2024-02-27
-          level: 3
-
-      # - id: section_users
-      #   type: Title
-      #   properties:
-      #     content: User Data
-      #     level: 3
-
-      # - id: date_range_container
-      #   type: Box
-      #   layout:
-      #     span: 12
-      #     align: center
-      #     offset: 6
-      #   blocks:
-      #     - id: users_date_range
-      #       type: DateRangeSelector
-      #       properties:
-      #         placeholder:
-      #           - Start Date
-      #           - End Date
-      #         title: "User Activity Date Range"
-      #         # title:
-      #         disabledDates:
-      #           max: 
-      #             _state: 
-      #               key: start_date_revenue
-      #               default: 
-      #                 _date: now
-      #       # events:
-      #       #   properties:
-      #       #     onChange:
-      #       #       - id: set_user_dates
-      #       #         type: SetState
-      #       #         params:
-      #       #           start_date_users: #TODO use input date
-      #       #           end_date_users: #TODO use input date
-        
-      # - _ref: pages/dashboard/components/charts/active_user_chart.yaml
-
-      # - id: user_activity_data
-      #   type: Box
-      #   layout: 
-      #     span: 8
-      #     contentGutter: 10
-      #   blocks:
-      #     - _ref: pages/dashboard/components/cards/account_creations.yaml
