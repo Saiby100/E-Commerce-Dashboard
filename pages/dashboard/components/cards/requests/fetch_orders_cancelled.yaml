@@ -16,8 +16,7 @@ properties:
   pipeline:
     - $match: 
         order_type: "sale"
-        order_cancelled: true
-        date_ordered:
+        date_cancelled:
           $gte: 
             _payload: start_date
           $lte: 
