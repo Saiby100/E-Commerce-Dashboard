@@ -29,6 +29,9 @@
     
     result_revenue_split:
       _request: fetch_revenue_split
+    
+    revenue_cards_loading: false
+    revenue_charts_loading: false
 
 - id: finalize_revenue_data
   type: SetState
