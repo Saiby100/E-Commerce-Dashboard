@@ -1,4 +1,30 @@
-# TODO: Add chart requests
+- id: fetch_revenue_data
+  type: Request
+  params:
+    - fetch_revenue
+- id: set_fetch_revenue
+  type: SetState
+  params:
+    revenue_data:
+      _request: fetch_revenue # array
+- id: set_finalize_revenue
+  type: SetState
+  params:
+    revenue_y_axis:
+      _array.map:
+        on: 
+          _state: revenue_data
+        callback:
+          _function:
+            __args: 0.total
+    revenue_x_axis:
+      _array.map:
+        on: 
+          _state: revenue_data
+        callback:
+          _function:
+            __args: 0._id
+    
 - id: fetch_order_completions
   type: Request
   params:
