@@ -1,5 +1,14 @@
 id: revenue_chart
 type: Box
+loading: 
+  _state: revenue_charts_loading
+skeleton:
+  type: SkeletonParagraph
+  style:
+    paddingTop: 20px
+    backgroundColor: '#ffffff'
+  properties:
+    lines: 8
 layout: 
   span: 12
 properties:
