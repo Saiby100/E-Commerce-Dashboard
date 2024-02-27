@@ -1,0 +1,32 @@
+id: date_range_container
+type: Box
+layout:
+  span: 16
+  contentGutter: 10
+blocks:
+  - id: revenue_date_range
+    type: DateRangeSelector
+    layout:
+      span: 20
+    properties:
+      placeholder:
+        - Start Date
+        - End Date
+      title: "Revenue Date Range"
+      disabledDates:
+        max: 
+          _date: now
+  - id: refresh_btn
+    type: Button
+    layout:
+      span: 4
+      align: bottom
+    properties:
+      title: Refresh
+      style:
+        background: "#ffffff"
+        borderColor: "#ffffff"
+        color: "#000000"
+    events:
+      onClick:
+        _ref: pages/dashboard/components/actions/refresh_revenue_section.yaml
