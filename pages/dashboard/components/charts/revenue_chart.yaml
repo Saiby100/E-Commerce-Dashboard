@@ -18,14 +18,8 @@ blocks:
           text: Revenue
         xAxis: 
           type: category
-          data: #TODO: make dynamic
-            - Day 1
-            - Day 2
-            - Day 3
-            - Day 4
-            - Day 5
-            - Day 6
-            - Day 7
+          data:
+            _state: revenue_x_axis
         yAxis:
           type: value
         series:
@@ -35,11 +29,5 @@ blocks:
               color:  "#4649ff"
             areaStyle:
               color: "#4649ff"
-            data: #TODO: Fetch from db
-              - 150
-              - 230
-              - 224
-              - 218
-              - 135
-              - 147
-              - 260
+            data:
+              _state: revenue_y_axis
