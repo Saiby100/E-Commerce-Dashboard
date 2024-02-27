@@ -1,4 +1,4 @@
-id: fetch_cancellations
+id: fetch_services_cancelled
 type: MongoDBAggregation
 connectionId: orders
 payload:
@@ -15,6 +15,7 @@ payload:
 properties:
   pipeline:
     - $match: 
+        order_type: "service"
         order_cancelled: true
         date_ordered:
           $gte: 

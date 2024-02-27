@@ -1,0 +1,24 @@
+id: fetch_orders_cancelled
+type: MongoDBAggregation
+connectionId: orders
+payload:
+  start_date:
+    _state: 
+      key: revenue_date_range.0
+      default: 
+        _state: default_start_date
+  end_date:
+    _state: 
+      key: revenue_date_range.1
+      default: 
+        _state: default_end_date
+properties:
+  pipeline:
+    - $match: 
+        order_type: "sale"
+        order_cancelled: true
+        date_ordered:
+          $gte: 
+            _payload: start_date
+          $lte: 
+            _payload: end_date
