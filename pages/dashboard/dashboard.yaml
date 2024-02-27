@@ -29,6 +29,7 @@ requests:
   - _ref: pages/dashboard/components/cards/requests/fetch_services_cancelled.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_completed.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_services_completed.yaml
+  - _ref: pages/dashboard/components/charts/requests/fetch_revenue.yaml
 
 areas:
   content:
@@ -68,7 +69,7 @@ areas:
             _state: 
               key: saved_title
               default: 
-                _state: default_end_date
+                _date: 2024-02-27
           level: 3
 
       # - id: section_users
