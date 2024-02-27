@@ -1,5 +1,13 @@
 id: orders_completed
 type: Card
+loading:
+  _state: revenue_cards_loading
+skeleton:
+  type: Card
+  blocks:
+    - type: Skeleton
+      properties:
+        height: 40
 layout:
   span: 6
 properties:
