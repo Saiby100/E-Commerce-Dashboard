@@ -1,0 +1,32 @@
+id: fetch_revenue
+type: MongoDBAggregation
+connectionId: orders
+payload:
+  start_date:
+    _state: 
+      key: revenue_date_range.0
+      default: 
+        _state: default_start_date
+  end_date:
+    _state: 
+      key: revenue_date_range.1
+      default: 
+        _state: default_end_date
+properties:
+  pipeline:
+    - $match: 
+        order_cancelled: false
+        date_ordered:
+          $gte: 
+            _payload: start_date
+          $lte: 
+            _payload: end_date
+    - $group:
+        _id: 
+          $dateToString: # Ignore time when grouping
+            format: "%Y-%m-%d"
+            date: $date_ordered
+        total:
+          $sum: $order_price
+        
+
