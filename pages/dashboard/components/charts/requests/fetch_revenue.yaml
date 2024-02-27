@@ -16,7 +16,7 @@ properties:
   pipeline:
     - $match: 
         order_cancelled: false
-        date_ordered:
+        date_completed:
           $gte: 
             _payload: start_date
           $lte: 
@@ -25,7 +25,7 @@ properties:
         _id: 
           $dateToString: # Ignore time when grouping
             format: "%Y-%m-%d"
-            date: $date_ordered
+            date: $date_completed
         total:
           $sum: $order_price
         
