@@ -4,7 +4,7 @@ layout:
   span: 6
 properties:
   hoverable: true
-  title: "Deliveries"
+  title: "Services Cancelled"
   size: small
   bordered: false
 areas: 
@@ -19,12 +19,12 @@ areas:
   content:
     direction: row-reverse
     blocks:
-      - id: delivery_num
+      - id: cancelled_services_num
         type: Statistic
         properties:
           value: 
             _state: 
-              key: deliveries
+              key: result_services_cancelled
               default: 157
         layout:
           grow: 0

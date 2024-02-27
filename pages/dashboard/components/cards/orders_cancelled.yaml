@@ -4,7 +4,7 @@ layout:
   span: 6
 properties:
   hoverable: true
-  title: "Cancellations"
+  title: "Orders Cancelled"
   size: small
   bordered: false
 areas: 
@@ -19,12 +19,12 @@ areas:
   content:
     direction: row-reverse
     blocks:
-      - id: cancelled_num
+      - id: orders_cancelled_num
         type: Statistic
         properties:
           value: 
             _state: 
-              key: cancellations
+              key: result_orders_cancelled
               default: 89
         layout:
           grow: 0
