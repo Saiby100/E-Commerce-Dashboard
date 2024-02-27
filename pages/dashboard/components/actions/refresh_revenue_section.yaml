@@ -1,0 +1,45 @@
+# TODO: Add chart requests
+- id: fetch_order_completions
+  type: Request
+  params:
+    - fetch_orders_completed
+- id: set_fetched_orders_completed
+  type: SetState
+  params:
+    result_orders_completed:
+      _if_none:
+        - _request: fetch_orders_completed.length
+        - -1
+- id: fetch_service_completions
+  type: Request
+  params:
+    - fetch_services_completed
+- id: set_fetched_services_completed
+  type: SetState
+  params:
+    result_services_completed:
+      _if_none:
+        - _request: fetch_services_completed.length
+        - -1
+- id: fetch_order_cancellations
+  type: Request
+  params:
+    - fetch_orders_cancelled
+- id: set_fetched_orders_cancelled
+  type: SetState
+  params:
+    result_orders_cancelled:
+      _if_none:
+        - _request: fetch_orders_cancelled.length
+        - -1
+- id: fetch_service_cancellations
+  type: Request
+  params:
+    - fetch_services_cancelled
+- id: set_fetched_services_cancelled
+  type: SetState
+  params:
+    result_services_cancelled:
+      _if_none:
+        - _request: fetch_services_cancelled.length
+        - -1
