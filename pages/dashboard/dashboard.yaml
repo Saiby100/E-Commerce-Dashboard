@@ -51,3 +51,12 @@ areas:
           - _ref: pages/dashboard/components/cards/services_completed.yaml
           - _ref: pages/dashboard/components/cards/orders_cancelled.yaml
           - _ref: pages/dashboard/components/cards/services_cancelled.yaml
+      
+      - id: divider
+        type: Divider
+
+      - id: goals_title
+        type: Title
+        properties:
+          content: Week Goals
+          level: 3
