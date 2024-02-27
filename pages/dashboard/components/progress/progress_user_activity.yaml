@@ -1,0 +1,18 @@
+id: container
+type: Card
+properties:
+  title: "User Activity Progress"
+layout:
+  grow: 0
+areas:
+  content:
+    align: center
+    blocks:
+      - id: progress_user_activity
+        type: Progress
+        layout:
+          shrink: 1
+        properties:
+          type: dashboard
+          percent: 100 #TODO: Fetch from db
+          strokeColor: "#52c41a"

@@ -1,0 +1,18 @@
+id: container
+type: Card
+properties:
+  title: "New Orders Progress"
+layout:
+  shrink: 1
+areas:
+  content:
+    align: center
+    blocks:
+      - id: progress_orders
+        type: Progress
+        layout:
+          shrink: 1
+        properties:
+          type: dashboard
+          percent: 23 #TODO: Fetch from db
+          strokeColor: "#52c41a"
