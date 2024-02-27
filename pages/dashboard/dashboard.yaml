@@ -29,6 +29,7 @@ requests:
   - _ref: pages/dashboard/components/cards/requests/fetch_services_cancelled.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_completed.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_services_completed.yaml
+
   - _ref: pages/dashboard/components/charts/requests/fetch_revenue.yaml
   - _ref: pages/dashboard/components/charts/requests/fetch_revenue_split.yaml
 
@@ -60,3 +61,14 @@ areas:
         properties:
           content: Week Goals
           level: 3
+      
+      #TODO: Center this and add titles
+      - id: progress_container
+        type: Box
+        layout: 
+          span: 24
+          contentGutter: 40
+        blocks:
+          - _ref: pages/dashboard/components/progress/progress_orders.yaml
+          - _ref: pages/dashboard/components/progress/progress_signups.yaml
+          - _ref: pages/dashboard/components/progress/progress_user_activity.yaml
