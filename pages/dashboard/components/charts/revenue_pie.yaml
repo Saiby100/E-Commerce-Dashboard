@@ -32,14 +32,6 @@ blocks:
               fontWeight: "bold"
           labelLine: 
             show: false
-          data: #TODO: Fetch from db
-            - value: 700
-              name: "Search Engine"
-            - value: 735
-              name: "Direct"
-            - value: 580
-              name: "Email"
-            - value: 484
-              name: "Union Ads"
-            - value: 300
-              name: "Video Ads"
+          data:
+            _state:
+              result_revenue_split
