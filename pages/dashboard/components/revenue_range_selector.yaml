@@ -10,8 +10,8 @@ blocks:
       span: 20
     properties:
       placeholder:
-        - Start Date
-        - End Date
+        - _state: default_start_date
+        - _state: default_end_date
       title: "Revenue Date Range"
       disabledDates:
         max: 
