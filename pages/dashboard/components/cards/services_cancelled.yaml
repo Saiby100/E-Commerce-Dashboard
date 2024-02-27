@@ -21,8 +21,8 @@ areas:
       - id: truck_icon
         type: Icon
         properties:
-          name: FaTruck
-          size: 20
+          name: TiCancel
+          size: 23
           color: "#3F8DF2"
   content:
     direction: row-reverse
