@@ -22,32 +22,11 @@ events:
           _date: now
 
   onMountAsync:
-    - id: fetch_order_completions
-      type: Request
-      params:
-        - fetch_orders_completed
-    - id: fetch_service_completions
-      type: Request
-      params:
-        - fetch_services_completed
-
-    - id: set_fetched_orders_completed
-      type: SetState
-      params:
-        result_orders_completed:
-          _if_none:
-            - _request: fetch_orders_completed.1.order_price #TODO: make this the amount
-            - -1
-    - id: set_fetched_services_completed
-      type: SetState
-      params:
-        result_services_completed:
-          _if_none:
-            - _request: fetch_services_completed.0.order_price #TODO: make this the amount
-            - -1
-
+    _ref: pages/dashboard/components/actions/refresh_revenue_section.yaml
+    
 requests:
-  - _ref: pages/dashboard/components/cards/requests/fetch_cancellations.yaml
+  - _ref: pages/dashboard/components/cards/requests/fetch_orders_cancelled.yaml
+  - _ref: pages/dashboard/components/cards/requests/fetch_services_cancelled.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_completed.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_services_completed.yaml
 
@@ -60,44 +39,8 @@ areas:
         properties:
           content: Revenue Data
           level: 3
-      - id: date_range_container
-        type: Box
-        layout:
-          span: 16
-          contentGutter: 10
-        blocks:
-          - id: revenue_date_range
-            type: DateRangeSelector
-            layout:
-              span: 20
-            properties:
-              placeholder:
-                - Start Date
-                - End Date
-              title: "Revenue Date Range"
-              disabledDates:
-                max: 
-                  _date: now
-          - id: refresh_btn
-            type: Button
-            layout:
-              span: 4
-              align: bottom
-            properties:
-              title: Refresh
-              style:
-                background: "#ffffff"
-                borderColor: "#ffffff"
-                color: "#000000"
-            events:
-              onClick:
-                - id: set_saved_title
-                  type: SetState
-                  params:
-                    saved_title:
-                      _state: 
-                        key: default_start_date
-                        default: "Changed with button"
+      
+      - _ref: pages/dashboard/components/revenue_range_selector.yaml
       
       - id: revenue_data_container
         type: Box
@@ -110,8 +53,8 @@ areas:
           
           - _ref: pages/dashboard/components/cards/orders_completed.yaml
           - _ref: pages/dashboard/components/cards/services_completed.yaml
-          - _ref: pages/dashboard/components/cards/cancellations.yaml
-          - _ref: pages/dashboard/components/cards/deliveries.yaml
+          - _ref: pages/dashboard/components/cards/orders_cancelled.yaml
+          - _ref: pages/dashboard/components/cards/services_cancelled.yaml
 
       - id: section_divider
         type: Divider
