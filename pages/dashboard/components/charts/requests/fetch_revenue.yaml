@@ -15,7 +15,7 @@ payload:
 properties:
   pipeline:
     - $match: 
-        order_cancelled: false
+        date_cancelled: null
         date_completed:
           $gte: 
             _payload: start_date
@@ -28,5 +28,6 @@ properties:
             date: $date_completed
         total:
           $sum: $order_price
-        
+    - $sort:
+        _id: 1 
 
