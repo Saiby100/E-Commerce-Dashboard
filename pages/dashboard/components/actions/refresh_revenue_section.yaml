@@ -1,3 +1,10 @@
+- id: set_loading
+  type: SetState
+  params:
+    # Set everything to loading
+    revenue_cards_loading: true
+    revenue_charts_loading: true
+
 - id: fetch_data
   type: Request
   params:
