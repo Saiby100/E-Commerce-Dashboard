@@ -1,0 +1,8 @@
+id: fetch_total_users
+type: MongoDBFind
+connectionId: users
+properties:
+  query:
+    date_created:
+      $exists: true
+      $ne: null
