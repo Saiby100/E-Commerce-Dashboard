@@ -16,14 +16,7 @@ connections:
       databaseUri:
         _secret: DATABASE_URL
       databaseName: e_commerce_lowdefy
-      collection: Users
-  - id: ordered_products
-    type: MongoDBCollection
-    properties:
-      databaseUri:
-        _secret: DATABASE_URL
-      databaseName: e_commerce_lowdefy
-      collection: OrderedProducts
+      collection: User
   - id: user_activity
     type: MongoDBCollection
     properties:
