@@ -1,0 +1,38 @@
+id: new_orders
+type: PageHeaderMenu
+properties:
+  title: Orders
+layout:
+  contentGutter: 10
+
+events:
+  onMountAsync:
+    - id: fetch_orders
+      type: Request
+      params:
+        all: true
+    - id: init_orders_list
+      type: SetState
+      params:
+        orders_list:
+          _request: fetch_incomplete_orders
+
+requests:
+  - _ref: pages/orders/requests/fetch_incomplete_orders.yaml
+
+areas:
+  content:
+    justify: center
+    blocks:
+      - id: list_box
+        type: Box
+        layout:
+          span: 10
+          contentGutter: 6
+        blocks:
+          - _ref: pages/orders/components/orders_content_list.yaml
+          # - id: test_title
+          #   type: Title
+          #   properties:
+          #     content: 
+          #       _state: orders_list.0.address

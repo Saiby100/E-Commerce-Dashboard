@@ -1,0 +1,11 @@
+id: fetch_incomplete_orders
+type: MongoDBAggregation
+connectionId: orders
+properties:
+  pipeline:
+    - $match: 
+        date_completed: null
+        date_cancelled: null
+    - $sort:
+        date_ordered: 1
+        
