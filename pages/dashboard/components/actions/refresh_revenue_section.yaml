@@ -15,6 +15,17 @@
   params:
     revenue_data:
       _request: fetch_revenue # array
+    completed_orders_list:
+      _request: fetch_orders_completed
+    
+    completed_services_list:
+      _request: fetch_services_completed
+    
+    cancelled_orders_list:
+      _request: fetch_orders_cancelled
+    
+    cancelled_services_list:
+      _request: fetch_services_cancelled
 
     result_orders_completed:
       _if_none:
