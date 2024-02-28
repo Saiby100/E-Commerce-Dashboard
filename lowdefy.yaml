@@ -41,6 +41,12 @@ menus:
         properties:
           icon: AiOutlineHome
           title: Dashboard
+      - id: new_orders
+        type: MenuLink
+        pageId: new_orders
+        properties:
+          title: New Orders
 
 pages:
   - _ref: pages/dashboard/dashboard.yaml
+  - _ref: pages/orders/new_orders.yaml
