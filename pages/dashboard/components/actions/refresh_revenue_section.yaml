@@ -48,10 +48,16 @@
     result_revenue_split:
       _request: fetch_revenue_split
     
+    user_data:
+      _request: fetch_user_activity
+    
+    total_users:
+      _request: fetch_total_users.length
+    
     revenue_cards_loading: false
     revenue_charts_loading: false
 
-- id: finalize_revenue_data
+- id: finalize_chart_data
   type: SetState
   params:
     revenue_y_axis:
@@ -65,6 +71,23 @@
       _array.map:
         on: 
           _state: revenue_data
+        callback:
+          _function:
+            __args: 0._id
+    
+    user_y_axis:
+      _array.map:
+        on:
+          _state: user_data
+        callback:
+          _function:
+            __divide:
+              - __args: 0.total
+              - _state: total_users
+    user_x_axis:
+      _array.map:
+        on:
+          _state: user_data
         callback:
           _function:
             __args: 0._id
