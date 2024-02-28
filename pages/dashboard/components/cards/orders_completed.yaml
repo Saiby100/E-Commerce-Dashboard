@@ -15,6 +15,15 @@ properties:
   title: "Orders Completed"
   size: small
   bordered: false
+
+events:
+  onClick:
+    - id: toggleOpen
+      type: CallMethod
+      params:
+        blockId: completed_orders_modal
+        method: toggleOpen
+
 areas: 
   extra:
     blocks:

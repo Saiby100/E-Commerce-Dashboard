@@ -15,6 +15,13 @@ properties:
   title: "Services Cancelled"
   size: small
   bordered: false
+events:
+  onClick:
+    - id: toggleOpen
+      type: CallMethod
+      params:
+        blockId: cancelled_services_modal
+        method: toggleOpen
 areas: 
   extra:
     blocks:

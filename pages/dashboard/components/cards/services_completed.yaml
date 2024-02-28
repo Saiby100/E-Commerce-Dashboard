@@ -15,6 +15,13 @@ properties:
   title: "Services Completed"
   size: small
   bordered: false
+events:
+  onClick:
+    - id: toggleOpen
+      type: CallMethod
+      params:
+        blockId: completed_services_modal
+        method: toggleOpen
 areas: 
   extra:
     blocks:

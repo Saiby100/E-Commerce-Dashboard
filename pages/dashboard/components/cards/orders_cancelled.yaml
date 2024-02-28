@@ -15,6 +15,15 @@ properties:
   title: "Orders Cancelled"
   size: small
   bordered: false
+
+events:
+  onClick:
+    - id: toggleOpen
+      type: CallMethod
+      params:
+        blockId: cancelled_orders_modal
+        method: toggleOpen
+
 areas: 
   extra:
     blocks:
