@@ -26,7 +26,8 @@ properties:
     - $sort:
         date_completed: -1
     - $project:
-        order_id: $_id
+        order_id: 
+          $toString: $_id
         date_ordered: 1
         date_completed: 1
         order_price: 1

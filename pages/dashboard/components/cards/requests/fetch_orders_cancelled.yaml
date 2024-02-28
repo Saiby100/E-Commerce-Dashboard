@@ -20,10 +20,12 @@ properties:
           $gte: 
             _payload: start_date
           $lte: 
+            _payload: end_date
     - $sort:
         date_cancelled: -1
     - $project:
-        order_id: $_id
+        order_id: 
+          $toString: $_id
         date_ordered: 1
         date_cancelled: 1
         order_price: 1
