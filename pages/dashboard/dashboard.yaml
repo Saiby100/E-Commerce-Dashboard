@@ -66,3 +66,9 @@ areas:
           - _ref: pages/dashboard/components/progress/progress_orders.yaml
           - _ref: pages/dashboard/components/progress/progress_signups.yaml
           - _ref: pages/dashboard/components/progress/progress_user_activity.yaml
+      
+      # Modals
+      - _ref: pages/dashboard/components/modals/completed_orders_modal.yaml
+      - _ref: pages/dashboard/components/modals/completed_services_modal.yaml
+      - _ref: pages/dashboard/components/modals/cancelled_orders_modal.yaml
+      - _ref: pages/dashboard/components/modals/cancelled_services_modal.yaml
