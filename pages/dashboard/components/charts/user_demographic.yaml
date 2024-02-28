@@ -1,0 +1,46 @@
+id: pie_container
+type: Box
+loading: 
+  _state: revenue_charts_loading
+skeleton:
+  type: SkeletonParagraph
+  style:
+    paddingTop: 20px
+    backgroundColor: '#ffffff'
+  properties:
+    lines: 8
+layout: 
+  span: 12
+properties:
+  style:
+    paddingTop: 20px
+    backgroundColor: '#ffffff'
+blocks:
+  - id: revenue_pie
+    type: EChart
+    properties:
+      option:
+        tooltip: 
+          trigger: item
+        legend:
+          left: center
+        series:
+          name: "Revenue Split"
+          type: "pie"
+          radius:
+            - "40%"
+            - "70%"
+          avoidLabelOverlap: false
+          label:
+            show: false
+            position: "center"
+          emphasis:
+            label:
+              show: true
+              fontSize: 30
+              fontWeight: "bold"
+          labelLine: 
+            show: false
+          data:
+            _state:
+              result_revenue_split
