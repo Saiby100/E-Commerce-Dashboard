@@ -20,6 +20,8 @@ events:
     _ref: pages/dashboard/components/actions/refresh_revenue_section.yaml
     
 requests:
+  - _ref: pages/dashboard/requests/fetch_total_users.yaml
+
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_cancelled.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_services_cancelled.yaml
   - _ref: pages/dashboard/components/cards/requests/fetch_orders_completed.yaml
@@ -27,6 +29,8 @@ requests:
 
   - _ref: pages/dashboard/components/charts/requests/fetch_revenue.yaml
   - _ref: pages/dashboard/components/charts/requests/fetch_revenue_split.yaml
+
+  - _ref: pages/dashboard/components/charts/requests/fetch_user_activity.yaml
 
 areas:
   content:
@@ -50,6 +54,15 @@ areas:
       
       - id: divider
         type: Divider
+      
+      - id: user_data_container
+        type: Box
+        layout:
+          span: 24
+          contentGutter: 16
+        blocks:
+          - _ref: pages/dashboard/components/charts/user_activity_chart.yaml
+          - _ref: pages/dashboard/components/charts/user_demographic.yaml
 
       - id: goals_title
         type: Title
