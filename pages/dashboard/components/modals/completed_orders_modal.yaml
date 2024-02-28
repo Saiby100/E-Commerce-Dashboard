@@ -1,0 +1,27 @@
+id: completed_orders_modal
+type: Modal
+properties:
+  title: <h2>Orders Completed</h2>
+  footer: false
+  width: 870px
+  centered: true
+areas:
+  content:
+    blocks:
+      - id: completed_orders_table
+        type: AgGridAlpine
+        properties:
+          rowData:
+            _state: completed_orders_list
+          defaultColDef:
+            sortable: true
+            filter: true
+          columnDefs:
+            - headerName: Order Id
+              field: order_id
+            - headerName: Date Ordered
+              field: date_ordered
+            - headerName: Date Completed
+              field: date_completed
+            - headerName: Order Price
+              field: order_price
