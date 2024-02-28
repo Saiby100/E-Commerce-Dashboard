@@ -74,8 +74,8 @@ def add_order_complete(username, address, order_type):
 def add_order_incomplete(username, address, order_type):
     add_order(username, None, None, address, order_type)
 
-def add_order_cancelled(username, date_cancelled, address, order_type):
-    add_order(username, date_cancelled, None, address, order_type)
+def add_order_cancelled(username, date_cancelled, address, order_type, date_ordered=datetime.now()):
+    add_order(username, date_cancelled, None, address, order_type, date_ordered)
 
 def add_many_complete_orders(username, address, days_before):
     date_and_time = datetime.now()
@@ -93,7 +93,14 @@ def add_many_complete_orders(username, address, days_before):
 
         num_orders = random.randint(0, 10)
         for j in range(0, num_orders):
-            add_order(username, None, temp_date, address, order_type)
+            add_order(
+                username, 
+                None, 
+                temp_date, 
+                address, 
+                order_type,
+                temp_date - timedelta(days=random.randint(0, 30))
+            )
 
 def add_many_cancelled_orders(username, address, days_before):
     date_and_time = datetime.now()
@@ -111,14 +118,29 @@ def add_many_cancelled_orders(username, address, days_before):
 
         num_orders = random.randint(0, 10)
         for j in range(0, num_orders):
-            add_order_cancelled(username, temp_date, address, order_type)
+            add_order_cancelled(
+                username, 
+                temp_date, 
+                address, 
+                order_type, 
+                temp_date - timedelta(days=random.randint(0, 30))
+            )
     
 def clear_orders():
     order_collection.delete_many({})
     print("Deleted successfully")
 
 if __name__ == "__main__":
+
     # clear_orders()
-    add_many_complete_orders("Salahuddin", "My Address", 20)
+    add_many_complete_orders("Salahuddin", "Cape Town", 20)
+    # add_many_cancelled_orders("Amanda", "Stellenbosch", 20)
+    # add_order(
+    #     "Salahuddin",
+    #     None,
+    #     datetime.now() - timedelta(days=50),
+    #     "New address",
+    #     "sale"
+    # )
 
     client.close()
