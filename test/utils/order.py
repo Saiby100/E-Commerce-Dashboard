@@ -31,7 +31,7 @@ class Order:
                 "user_id": user_id
             }
             self.collection.insert_one(order)
-            print(f"User with username {username} not found.")
+            print(f"Order added for user {username}")
         else:
             print(f"User with username {username} not found.")
     

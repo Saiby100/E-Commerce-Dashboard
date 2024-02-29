@@ -32,24 +32,34 @@ class UserActivity:
     
     def _update_activity(self, hours, date, username):
         query = self._gen_query(username, date)
+        current_hours = self._get_activity(username, date)["hours"]
+
         update = {
             "$set": {
-                "hours": hours
+                "hours": current_hours + hours
             }
         }
         self.collection.update_one(query, update)
+        print("Activity updated")
 
     def add_user_activity(self, hours, date, username):
         user_id = self.user_collection.get_userid(username)
 
         if not self._activity_exists(username, date):
+            print(username, date)
             if user_id is not None:
                 self.collection.insert_one({
                     "hours": hours,
                     "date_active": date,
                     "user_id": user_id
                 })
+                print("New activity added")
             else:
                 print("User Id not found")
         else: 
-            self._update_activity(hours, date, user_id)
+            self._update_activity(hours, date, username)
+    
+    def clear_collection(self):
+        self.collection.delete_many({})
+        print("Deleted successfully")
+        
