@@ -16,7 +16,7 @@ properties:
     paddingTop: 20px
     backgroundColor: '#ffffff'
 blocks:
-  - id: revenue_pie
+  - id: user_demographic_pie
     type: EChart
     properties:
       option:
@@ -25,7 +25,7 @@ blocks:
         legend:
           left: center
         series:
-          name: "Revenue Split"
+          name: "User Demographic"
           type: "pie"
           radius:
             - "40%"
@@ -42,5 +42,4 @@ blocks:
           labelLine: 
             show: false
           data:
-            _state:
-              result_revenue_split
+            _state: result_demographic_data
