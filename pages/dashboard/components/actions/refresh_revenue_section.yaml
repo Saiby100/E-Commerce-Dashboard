@@ -94,3 +94,17 @@
         callback:
           _function:
             __args: 0._id
+
+- id: calculate_ad_revenue
+  type: SetState
+  params:
+    ad_revenue_per_day:
+      _array.map:
+        on: 
+          _state: user_y_axis
+        callback:
+          _function:
+            __product:
+              - __args: 0
+              - _state: ads_per_hour
+              - _state: revenue_per_ad

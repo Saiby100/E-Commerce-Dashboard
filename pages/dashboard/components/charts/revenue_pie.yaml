@@ -42,5 +42,16 @@ blocks:
           labelLine: 
             show: false
           data:
-            _state:
-              result_revenue_split
+            _array.concat:
+              - _state: result_revenue_split
+              - _object.assign:
+                  - name: ads
+                  - value:
+                      _array.reduce:
+                        on:
+                          _state: ad_revenue_per_day
+                        callback:
+                         _function:
+                          __sum:
+                            - __args: 0
+                            - __args: 1
