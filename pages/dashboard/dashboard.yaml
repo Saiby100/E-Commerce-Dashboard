@@ -31,6 +31,7 @@ requests:
   - _ref: pages/dashboard/components/charts/requests/fetch_revenue_split.yaml
 
   - _ref: pages/dashboard/components/charts/requests/fetch_user_activity.yaml
+  - _ref: pages/dashboard/components/charts/requests/fetch_user_demographic.yaml
 
 areas:
   content:
@@ -64,22 +65,6 @@ areas:
           - _ref: pages/dashboard/components/charts/user_activity_chart.yaml
           - _ref: pages/dashboard/components/charts/user_demographic.yaml
 
-      - id: goals_title
-        type: Title
-        properties:
-          content: Week Goals
-          level: 3
-
-      - id: progress_container
-        type: Box
-        layout: 
-          span: 24
-          contentGutter: 40
-        blocks:
-          - _ref: pages/dashboard/components/progress/progress_orders.yaml
-          - _ref: pages/dashboard/components/progress/progress_signups.yaml
-          - _ref: pages/dashboard/components/progress/progress_user_activity.yaml
-      
       # Modals
       - _ref: pages/dashboard/components/modals/completed_orders_modal.yaml
       - _ref: pages/dashboard/components/modals/completed_services_modal.yaml
