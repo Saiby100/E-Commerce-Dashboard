@@ -1,3 +1,4 @@
 .lowdefy/**
 .env
 venv
+__pycache__
