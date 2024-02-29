@@ -21,7 +21,28 @@ areas:
               field: order_id
             - headerName: Date Ordered
               field: date_ordered
+              cellRenderer:
+                      _function:
+                        __moment.format:
+                          on:
+                            __args: 0.data.date_ordered
+                          format: DD-MM-YYYY
             - headerName: Date Completed
               field: date_completed
+              cellRenderer:
+                      _function:
+                        __moment.format:
+                          on:
+                            __args: 0.data.date_completed
+                          format: DD-MM-YYYY
             - headerName: Order Price
               field: order_price
+              valueFormatter:
+                _function:
+                  __intl.numberFormat:
+                    on:
+                      __args: 0.value
+                    options:
+                      style: currency
+                      currency: ZAR
+
