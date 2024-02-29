@@ -29,4 +29,7 @@ properties:
         _id: 1
     - $project:
         name: $_id
-        value: $total
+        value: 
+          $round: 
+            - $total
+            - 2

@@ -29,3 +29,8 @@ properties:
           $sum: $hours
     - $sort:
         _id: 1
+    - $project:
+        total:  
+          $round:
+            - $total
+            - 2
