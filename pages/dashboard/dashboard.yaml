@@ -15,6 +15,8 @@ events:
           _date: 2024-02-20 #TODO: Make week before current
         default_end_date:
           _date: now
+        ads_per_hour: 10
+        revenue_per_ad: 0.67
 
   onMountAsync:
     _ref: pages/dashboard/components/actions/refresh_revenue_section.yaml
