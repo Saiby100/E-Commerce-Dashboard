@@ -51,6 +51,9 @@
     user_data:
       _request: fetch_user_activity
     
+    result_demographic_data:
+      _request: fetch_user_demographic
+    
     total_users:
       _request: fetch_total_users.length
     
