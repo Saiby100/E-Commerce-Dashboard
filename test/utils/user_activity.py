@@ -46,7 +46,6 @@ class UserActivity:
         user_id = self.user_collection.get_userid(username)
 
         if not self._activity_exists(username, date):
-            print(username, date)
             if user_id is not None:
                 self.collection.insert_one({
                     "hours": hours,
