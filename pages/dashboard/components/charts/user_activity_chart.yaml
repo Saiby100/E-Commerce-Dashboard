@@ -1,9 +1,19 @@
 id: chart_container
-type: Card
+type: Box
+loading: 
+  _state: revenue_charts_loading
+skeleton:
+  type: SkeletonParagraph
+  style:
+    paddingTop: 20px
+    backgroundColor: '#ffffff'
+  properties:
+    lines: 8
 layout: 
   span: 12
 properties:
   style:
+    paddingTop: 20px
     backgroundColor: '#ffffff'
 blocks:
   - id: user_activity_chart
